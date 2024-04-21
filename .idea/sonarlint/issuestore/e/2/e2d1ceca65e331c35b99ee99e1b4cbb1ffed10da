@@ -1,4 +1,14 @@
 
+h
+java:S1192"KDefine a constant instead of duplicating this literal " units of " 4 times.(ÉÿØ8ğô±“ğ1
+T
+java:S2629"7Use the built-in formatting to construct this argument.(ÉÿØ8œŒ²“ğ1
+T
+java:S2629."7Use the built-in formatting to construct this argument.(ªú¾¨8¥å’“ğ1
+T
+java:S26299"7Use the built-in formatting to construct this argument.(Âªà8–¶—“ğ1
+T
+java:S2629>"7Use the built-in formatting to construct this argument.(‚ü¡8ùõ™“ğ1
 I
-java:S1602",Remove useless curly braces around statement(¤Œ†Ğ8¦×ş‘ğ1
-G	java:S106"+Replace this use of System.out by a logger.(Ø£ñĞ8¦×ş‘ğ1
+java:S1602",Remove useless curly braces around statement(¤Œ†Ğ8Ëô‘“ğ1
+G	java:S106"+Replace this use of System.out by a logger.(Ø£ñĞ8Ìô‘“ğ1
