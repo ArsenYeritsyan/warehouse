@@ -17,12 +17,35 @@ public class Material {
     public void adjustQuantity(int amount) {
         rwLock.writeLock().lock();
         try {
-            int newQuantity = quantity.get()+amount;
-            if (newQuantity > type.getMaxCapacity()||newQuantity <0) {
-throw new InventoryException("Operation outide limits for " + type.getName());            }
+            int newQuantity = quantity.get() + amount;
+            if (newQuantity > type.getMaxCapacity() || newQuantity < 0) {
+                throw new InventoryException("Operation outide limits for " + type.getName());
+            }
             quantity.addAndGet(amount);
         } finally {
             rwLock.writeLock().unlock();
+        }
+    }
+
+    public void removeQuantity(int amount) {
+        rwLock.writeLock().lock();
+        try {
+            int newQuantity = quantity.get() - amount;
+            if (newQuantity < 0) {
+                throw new InventoryException("Operation outide limits for " + type.getName());
+            }
+            quantity.addAndGet(-amount);
+        } finally {
+            rwLock.writeLock().unlock();
+        }
+    }
+
+    public int getQuantity() {
+        rwLock.readLock().lock();
+        try {
+            return quantity.get();
+        } finally {
+            rwLock.readLock().unlock();
         }
     }
 }

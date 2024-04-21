@@ -1,10 +1,10 @@
 package am.application;
 
 public enum MaterialType {
-    IRON("Iron", "For construction","/icon/path.png",100),
-    COOPER("Copper", "For electical circuits","/icon/path1.png",100),
-    BOLT("Bolt", "Construction","/icon/path2.png",100),
-    NEW("New", "Other","/icon/path4.png",100);
+    IRON("Iron", "For construction", "/icon/path.png", 100),
+    COOPER("Copper", "For electical circuits", "/icon/path1.png", 100),
+    BOLT("Bolt", "Construction", "/icon/path2.png", 100),
+    NEW("New", "Other", "/icon/path4.png", 100);
 
     private final String name;
     private final String description;
