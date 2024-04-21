@@ -14,26 +14,26 @@ public class WarehouseTest {
     private Logger mockLogger;
 
     @BeforeEach
-    public void setUp() {
+    void setUp() {
         warehouse1 = new Warehouse();
         warehouse2 = new Warehouse();
     }
 
     @Test
-    public void testAddMaterialAsync() throws InterruptedException {
+   void testAddMaterialAsync() throws InterruptedException {
         warehouse1.addMaterial(MaterialType.IRON, 50);
         assertEquals(50, warehouse1.getMaterialQuantity(MaterialType.IRON));
     }
 
     @Test
-    public void testRemoveMaterialAsync() throws InterruptedException {
+    void testRemoveMaterialAsync() throws InterruptedException {
         warehouse1.addMaterial(MaterialType.IRON, 100);
         warehouse1.removeMaterial(MaterialType.IRON, 50);
         assertEquals(50, warehouse1.getMaterialQuantity(MaterialType.IRON));
     }
 
     @Test
-    public void testTransferMaterial() throws InventoryException {
+    void testTransferMaterial() throws InventoryException {
         warehouse1.addMaterial(MaterialType.IRON, 100);
         warehouse1.transferMaterial(warehouse2, MaterialType.IRON, 50);
         assertEquals(50, warehouse1.getMaterialQuantity(MaterialType.IRON));
@@ -41,23 +41,23 @@ public class WarehouseTest {
     }
 
     @Test
-    public void testTransferInsufficientMaterial() {
+    void testTransferInsufficientMaterial() {
         assertThrows(InventoryException.class, () -> warehouse1.transferMaterial(warehouse2, MaterialType.IRON, 50));
     }
 
     @Test
-    public void testTransferNonExistentMaterial() {
+    void testTransferNonExistentMaterial() {
         warehouse1.addMaterial(MaterialType.IRON, 50);
         assertThrows(InventoryException.class, () -> warehouse1.transferMaterial(warehouse2, MaterialType.COPPER, 20));
     }
 
     @Test
-    public void testAddExcessiveMaterial() {
+    void testAddExcessiveMaterial() {
         assertThrows(InventoryException.class, () -> warehouse1.addMaterial(MaterialType.IRON, 200));
     }
 
     @Test
-    public void testRemoveMaterialNotPresent() {
+    void testRemoveMaterialNotPresent() {
         assertThrows(NullPointerException.class, () -> warehouse1.removeMaterial(MaterialType.IRON, 10));
     }
 
