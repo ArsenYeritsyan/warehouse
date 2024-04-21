@@ -14,7 +14,7 @@ public class MaterialTest {
     @BeforeEach
     public void setUp() {
         iron = new Material(MaterialType.IRON);
-        copper = new Material(MaterialType.COOPER);  // Assuming it's spelled "COPPER" in the enum
+        copper = new Material(MaterialType.COPPER);
         bolt = new Material(MaterialType.BOLT);
         newMaterial = new Material(MaterialType.NEW);
     }
@@ -47,7 +47,7 @@ public class MaterialTest {
 
     @Test
     public void testAdjustQuantityBelowZero() {
-        assertDoesNotThrow(() -> newMaterial.adjustQuantity(5));  // Adjust to within capacity first
+        assertDoesNotThrow(() -> newMaterial.adjustQuantity(5));
         InventoryException exception = assertThrows(InventoryException.class, () -> newMaterial.adjustQuantity(-11));
         assertEquals("Operation outide limits for New", exception.getMessage());
     }

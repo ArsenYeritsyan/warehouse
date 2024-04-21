@@ -48,7 +48,7 @@ public class WarehouseTest {
     @Test
     public void testTransferNonExistentMaterial() {
         warehouse1.addMaterial(MaterialType.IRON, 50);
-        assertThrows(InventoryException.class, () -> warehouse1.transferMaterial(warehouse2, MaterialType.COOPER, 20));
+        assertThrows(InventoryException.class, () -> warehouse1.transferMaterial(warehouse2, MaterialType.COPPER, 20));
     }
 
     @Test

@@ -2,7 +2,7 @@ package am.application;
 
 public enum MaterialType {
     IRON("Iron", "For construction", "/icon/path.png", 100),
-    COOPER("Copper", "For electical circuits", "/icon/path1.png", 80),
+    COPPER("Copper", "For electical circuits", "/icon/path1.png", 80),
     BOLT("Bolt", "Construction", "/icon/path2.png", 130),
     NEW("New", "Other", "/icon/path4.png", 10);
 
@@ -20,14 +20,6 @@ public enum MaterialType {
 
     public String getName() {
         return name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public String getIcon() {
-        return icon;
     }
 
     public int getMaxCapacity() {
